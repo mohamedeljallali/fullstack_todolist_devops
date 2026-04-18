@@ -41,6 +41,6 @@ jobs:
       - name: start containers and test
         run: docker compose up -d --wait
       - name: test URL
-      run: |
+        run: |
           docker compose ps
           curl -f http://localhost:5000/api/health # 👈 The "Truth" test
