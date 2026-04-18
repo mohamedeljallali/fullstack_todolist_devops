@@ -31,15 +31,25 @@ jobs:
       - uses: actions/checkout@v4
       - name: Create .env file
         run: |
+          # Create .env file for backend and database configuration
           echo "MYSQL_PASSWORD=${{ secrets.DB_PASS }}" >> .env
+          echo "MYSQL_ROOT_PASSWORD=${{ secrets.DB_PASS }}" >> .env
           echo "MYSQL_USER=${{ secrets.DB_USER }}" >> .env
           echo "MYSQL_DATABASE=${{ secrets.DB_NAME }}" >> .env
-          echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
+          echo "DB_HOST=db" >> .env
+
+          # Create .env file for frontend configuration
+          echo "VITE_API_URL=http://localhost:5000" >> .env
       - name: build images
         run: docker compose build
       
       - name: start containers and test
         run: docker compose up -d && sleep 5
+
+      - name: debug containers
+        if: failure()
+        run: docker compose logs db
+
       - name: test URL
         run: |
           docker compose ps
