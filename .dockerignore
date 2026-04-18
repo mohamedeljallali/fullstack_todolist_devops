@@ -1,0 +1,31 @@
+# --- Dependencies ---
+node_modules/
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# --- Build Outputs ---
+dist/
+build/
+*.egg-info/
+
+# --- Secrets & Environment ---
+.env
+.env.*
+!.env.example
+.git
+.gitignore
+
+# --- Database (Local data) ---
+mysql_data/
+*.sqlite
+*.db
+
+# --- Logs & Temp ---
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
