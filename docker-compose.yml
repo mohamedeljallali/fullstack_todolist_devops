@@ -43,7 +43,7 @@ services:
       - ./server:/app
     depends_on:
       db:
-        condition: service_healthy
+        condition: healthcheck
 
   frontend:
     build: ./client
