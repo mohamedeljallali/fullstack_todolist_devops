@@ -37,14 +37,17 @@ jobs:
           DB_USER: ${{ secrets.DB_USER }}
           DB_NAME: ${{ secrets.DB_NAME }}
         run: |
-          # We pass them into the command so Docker Compose can see them
-          MYSQL_ROOT_PASSWORD=$DB_PASS \
-          MYSQL_DATABASE=$DB_NAME \
-          MYSQL_USER=$DB_USER \
-          MYSQL_PASSWORD=$DB_PASS \
-          
-          # Create .env file for frontend configuration
-          echo "VITE_API_URL=http://localhost:5000" >> ./client/.env
+          # Create root env file for Docker Compose
+          cat > .env <<EOF
+          DB_PASS=$DB_PASS
+          DB_USER=$DB_USER
+          DB_NAME=$DB_NAME
+          EOF
+
+          # Create frontend config file for Vite
+          cat > ./client/.env <<EOF
+          VITE_API_URL=http://localhost:5000
+          EOF
       - name: build images
         run: docker compose build
       
