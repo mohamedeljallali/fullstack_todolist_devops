@@ -39,7 +39,7 @@ jobs:
         run: docker compose build
       
       - name: start containers and test
-        run: docker compose up -d --wait
+        run: docker compose up -d && sleep 5
       - name: test URL
         run: |
           docker compose ps
