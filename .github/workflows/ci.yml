@@ -30,15 +30,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create .env file
+      - name: Start Containers with Secrets
+        env:
+          # This maps your GitHub Secrets to shell variables
+          DB_PASS: ${{ secrets.DB_PASS }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_NAME: ${{ secrets.DB_NAME }}
         run: |
-          # Create .env file for backend and database configuration
-          echo "MYSQL_ROOT_PASSWORD=${{ secrets.DB_PASS }}" >> .env
-          echo "MYSQL_DATABASE=${{ secrets.DB_NAME }}" >> .env
-          echo "MYSQL_USER=${{ secrets.DB_USER }}" >> .env
-          echo "MYSQL_PASSWORD=${{ secrets.DB_PASS }}" >> .env
-          echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
-
+          # We pass them into the command so Docker Compose can see them
+          MYSQL_ROOT_PASSWORD=$DB_PASS \
+          MYSQL_DATABASE=$DB_NAME \
+          MYSQL_USER=$DB_USER \
+          MYSQL_PASSWORD=$DB_PASS \
+          
           # Create .env file for frontend configuration
           echo "VITE_API_URL=http://localhost:5000" >> ./client/.env
       - name: build images
