@@ -45,7 +45,7 @@ jobs:
         run: docker compose build
       
       - name: start containers and test
-        run: docker compose up -d && sleep 5
+        run: docker compose up -d
 
       - name: debug containers
         if: failure()
