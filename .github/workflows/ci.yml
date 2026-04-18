@@ -39,7 +39,7 @@ jobs:
           echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
 
           # Create .env file for frontend configuration
-          echo "VITE_API_URL=http://localhost:5000" >> .env
+          echo "VITE_API_URL=http://localhost:5000" >> ./client/.env
       - name: build images
         run: docker compose build
       
