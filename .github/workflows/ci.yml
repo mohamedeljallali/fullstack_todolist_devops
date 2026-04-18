@@ -1,0 +1,42 @@
+name: CI Build and Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  analyse-projects-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies and run linters
+        run: pip install flake8
+
+      - run: flake8 ./server
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install eslint
+      - run: npm run lint
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create .env file
+        run: |
+          echo "MYSQL_PASSWORD=${{ secrets.DB_PASS }}" >> .env
+          echo "MYSQL_USER=${{ secrets.DB_USER }}" >> .env
+          echo "MYSQL_DATABASE=${{ secrets.DB_NAME }}" >> .env
+          echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
+      - name: build images
+        run: docker compose build
+      
+      - name: start containers and test
+        run: docker compose up -d --wait

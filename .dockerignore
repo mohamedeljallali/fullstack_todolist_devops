@@ -17,6 +17,7 @@ build/
 !.env.example
 .git
 .gitignore
+.github/
 
 # --- Database (Local data) ---
 mysql_data/
