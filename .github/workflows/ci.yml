@@ -43,4 +43,4 @@ jobs:
       - name: test URL
         run: |
           docker compose ps
-          curl -f http://localhost:5000/api/health # 👈 The "Truth" test
+          curl -f http://localhost:3000 || exit 1
