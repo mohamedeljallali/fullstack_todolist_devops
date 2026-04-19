@@ -33,7 +33,7 @@ services:
       FLASK_ENV: development
       FLASK_DEBUG: "1"
       DB_HOST: db
-      DB_USER: ${MYSQL_ROOT_PASSWORD}
+      DB_USER: ${MYSQL_USER}
       DB_PASS: ${MYSQL_PASSWORD}
       DB_NAME: ${MYSQL_DATABASE}
     ports:
