@@ -1,7 +1,8 @@
 services:
   db:
     image: mysql:latest
-    container_name: database_todolist_VFM     #vue, flask, mysql
+    #                                       VFM = vue, flask, mysql
+    container_name: database_todolist_VFM
     env_file:
       - .env
     environment:
@@ -16,7 +17,7 @@ services:
     networks:
       - todoapp-react-flask-mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASS}"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -52,7 +53,6 @@ services:
       - "3000:3000"
     volumes:
       - ./client:/app
-      - /app/node_modules
     networks:
       - todoapp-react-flask-mysql
     depends_on:

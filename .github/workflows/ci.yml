@@ -2,9 +2,9 @@ name: CI Build and Test
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "main" ]
 
 jobs:
   # analyse-projects-code:
@@ -36,18 +36,17 @@ jobs:
           DB_PASS: ${{ secrets.DB_PASS }}
           DB_USER: ${{ secrets.DB_USER }}
           DB_NAME: ${{ secrets.DB_NAME }}
+          API_URL: ${{ secrets.API_URL }}
         run: |
           # Create root env file for Docker Compose
-          cat > .env <<EOF
-          DB_PASS=$DB_PASS
-          DB_USER=$DB_USER
-          DB_NAME=$DB_NAME
-          EOF
-
+          echo "MYSQL_ROOT_PASSWORD=$DB_PASS" > .env
+          echo "MYSQL_USER=$DB_USER" >> .env
+          echo "MYSQL_PASSWORD=$DB_PASS" >> .env
+          echo "MYSQL_DATABASE=$DB_NAME" >> .env
+      
           # Create frontend config file for Vite
-          cat > ./client/.env <<EOF
-          VITE_API_URL=http://localhost:5000
-          EOF
+          echo "VITE_API_URL=$API_URL" > ./client/.env
+
       - name: build images
         run: docker compose build
       
@@ -56,7 +55,7 @@ jobs:
 
       - name: debug containers
         if: failure()
-        run: docker compose logs db
+        run: docker compose logs db || exit 1
 
       - name: test URL
         run: |
