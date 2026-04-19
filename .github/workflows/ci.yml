@@ -29,7 +29,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-    environment: production
+    environment: env_file
 
     steps:
       - uses: actions/checkout@v4
