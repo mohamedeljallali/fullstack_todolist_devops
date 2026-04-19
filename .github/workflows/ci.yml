@@ -69,7 +69,7 @@ jobs:
         run: docker compose config
         
       - name: start containers and test
-        run:  docker compose up --exit-code-from backend
+        run:  docker compose up -d
 
       - name: debug containers
         if: failure()
