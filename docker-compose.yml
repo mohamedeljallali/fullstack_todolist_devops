@@ -44,7 +44,8 @@ services:
       - ./server:/app
     depends_on:
        db:
-        condition: service_healthy
+        condition: service_started
+        #condition: service_healthy
 
   frontend:
     build: ./client
