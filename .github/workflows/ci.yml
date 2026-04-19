@@ -34,17 +34,17 @@ jobs:
         env:
           # This maps your GitHub Secrets to shell variables
           
-          DB_ROOT_PASSWORD: ${{ secrets.DB_ROOT_PASSWORD }}
-          DB_PASS: ${{ secrets.DB_PASS }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_NAME: ${{ secrets.DB_NAME }}
+          MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+          MYSQL_USER: ${{ secrets.MYSQL_USER }}
+          MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
           API_URL: ${{ secrets.API_URL }}
         run: |
           # Create root env file for Docker Compose
-          echo "DB_ROOT_PASSWORD=$DB_ROOT_PASSWORD" > .env
-          echo "DB_PASS=$DB_PASS" >> .env
-          echo "DB_USER=$DB_USER" >> .env
-          echo "DB_NAME=$DB_NAME" >> .env
+          echo "MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD" > .env
+          echo "MYSQL_PASSWORD=$MYSQL_PASSWORD" >> .env
+          echo "MYSQL_USER=$MYSQL_USER" >> .env
+          echo "MYSQL_DATABASE=$MYSQL_DATABASE" >> .env
       
           # Create frontend config file for Vite
           echo "VITE_API_URL=$API_URL" > ./client/.env
