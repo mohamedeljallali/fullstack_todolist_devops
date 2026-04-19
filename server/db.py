@@ -1,10 +1,20 @@
 import mysql.connector
 import os
+import time
 
 def get_connection():
-    return mysql.connector.connect(
-        host=os.getenv("DB_HOST"),
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASS"),
-        database=os.getenv("DB_NAME")
-    )
+    retries = 10
+    for i in range(retries):
+        try:
+            conn = mysql.connector.connect(
+                host=os.getenv("MYSQL_HOST", "localhost"),
+                user=os.getenv("MYSQL_USER"),
+                password=os.getenv("MYSQL_PASSWORD"),
+                database=os.getenv("MYSQL_DATABASE")
+            )
+            print("Successfully connected to the database!")
+            return conn
+        except mysql.connector.Error as err:
+            print(f"Database not ready yet... (Attempts left: {retries})")
+            time.sleep(5)  # Wait before retrying
+    raise Exception("Could not connect to the database after multiple attempts.")
