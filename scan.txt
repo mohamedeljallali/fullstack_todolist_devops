@@ -1,12 +1,37 @@
-Run docker compose logs db
-  docker compose logs db
-  shell: /usr/bin/bash -e {0}
-time="2026-04-19T19:15:56Z" level=warning msg="The \"MYSQL_ROOT_PASSWORD\" variable is not set. Defaulting to a blank string."
-database_todolist_VFM  | 2026-04-19 19:15:55+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
-database_todolist_VFM  | 2026-04-19 19:15:56+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-database_todolist_VFM  | 2026-04-19 19:15:56+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
-Error: e_todolist_VFM  | 2026-04-19 19:15:56+00:00 [ERROR] [Entrypoint]: Database is uninitialized and password option is not specified
+time="2026-04-19T19:30:26Z" level=warning msg="The \"DB_USER\" variable is not set. Defaulting to a blank string."
+time="2026-04-19T19:30:26Z" level=warning msg="The \"DB_PASS\" variable is not set. Defaulting to a blank string."
+time="2026-04-19T19:30:26Z" level=warning msg="The \"DB_NAME\" variable is not set. Defaulting to a blank string."
+database_todolist_VFM  | 2026-04-19 19:30:25+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
+database_todolist_VFM  | 2026-04-19 19:30:25+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+database_todolist_VFM  | 2026-04-19 19:30:25+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
+Error: e_todolist_VFM  | 2026-04-19 19:30:25+00:00 [ERROR] [Entrypoint]: Database is uninitialized and password option is not specified
 database_todolist_VFM  |     You need to specify one of the following as an environment variable:
 database_todolist_VFM  |     - MYSQL_ROOT_PASSWORD
 database_todolist_VFM  |     - MYSQL_ALLOW_EMPTY_PASSWORD
 database_todolist_VFM  |     - MYSQL_RANDOM_ROOT_PASSWORD
+
+
+docker compose backend section ->
+
+backend:
+    build: ./server
+    container_name: backend_todolist_VFM
+    env_file:
+      - .env
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      FLASK_DEBUG: "1"
+      DB_HOST: db
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME}
+    ports:
+      - "5000:5000"
+    networks:
+      - todoapp-react-flask-mysql
+    volumes:
+      - ./server:/app
+    depends_on:
+      db:
+        condition: service_healthy
