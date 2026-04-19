@@ -30,13 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Start Containers with Secrets
+
+      - name: Create env file with Secrets variables
         env:
-          # This maps your GitHub Secrets to shell variables
           MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
-          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
-          MYSQL_USER: ${{ secrets.MYSQL_USER }}
           MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+          MYSQL_USER: ${{ secrets.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
           API_URL: ${{ secrets.API_URL }}
         run: |
           # Create root env file for Docker Compose
@@ -47,9 +47,6 @@ jobs:
       
           # Create frontend config file for Vite
           echo "VITE_API_URL=$API_URL" > ./client/.env
-
-          ls -la .env || (echo ".env is missing!" && exit 1) # Stop if file is gone
-          cat .env | grep MYSQL # See if variables are inside (safely)
 
       - name: build images
         run: docker compose build
