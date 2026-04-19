@@ -53,7 +53,14 @@ jobs:
 
       - name: build images
         run: docker compose build
-      
+
+      - name: Debug env file
+        run: |
+          echo "Contenu du .env :"
+          cat .env
+          echo "Contenu du ./client/.env :"
+          cat ./client/.env
+
       - name: start containers and test
         run:  docker compose up --exit-code-from backend
 
