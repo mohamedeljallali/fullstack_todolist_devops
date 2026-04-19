@@ -60,7 +60,10 @@ jobs:
           cat .env
           echo "Contenu du ./client/.env :"
           cat ./client/.env
-
+      
+      - name: Verify Docker env
+        run: docker compose config
+        
       - name: start containers and test
         run:  docker compose up --exit-code-from backend
 
