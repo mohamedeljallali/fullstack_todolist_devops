@@ -1,0 +1,14 @@
+      
+                                                #docker compose file#
+
+# db; section (healthcheck)# test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+# backend (server file) # environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      FLASK_DEBUG: "1"
+      DB_HOST: db
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME}
+
+should i add the port of mysql db abouve? scan for where error connection exaclty
