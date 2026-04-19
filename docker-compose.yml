@@ -53,7 +53,7 @@ services:
       - "3000:3000"
     volumes:
       - ./client:/app
-      - ./client/node_modules
+      - /app/node_modules
     networks:
       - todoapp-react-flask-mysql
     depends_on:
