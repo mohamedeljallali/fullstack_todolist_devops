@@ -39,10 +39,9 @@ jobs:
           API_URL: ${{ secrets.API_URL }}
         run: |
           # Create root env file for Docker Compose
-          echo "MYSQL_ROOT_PASSWORD=$DB_PASS" > .env
-          echo "MYSQL_USER=$DB_USER" >> .env
-          echo "MYSQL_PASSWORD=$DB_PASS" >> .env
-          echo "MYSQL_DATABASE=$DB_NAME" >> .env
+          echo "DB_PASS=$DB_PASS" > .env
+          echo "DB_USER=$DB_USER" >> .env
+          echo "DB_NAME=$DB_NAME" >> .env
       
           # Create frontend config file for Vite
           echo "VITE_API_URL=$API_URL" > ./client/.env
@@ -51,11 +50,11 @@ jobs:
         run: docker compose build
       
       - name: start containers and test
-        run: docker compose up -d
+        run: docker compose up
 
       - name: debug containers
         if: failure()
-        run: docker compose logs db || exit 1
+        run: docker compose logs db
 
       - name: test URL
         run: |
