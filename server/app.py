@@ -9,7 +9,7 @@ CORS(app)
 db = get_connection()
 
 def create_table():
-    conn = get_connection()
+    conn = db
     cursor = conn.cursor()
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS todos (
