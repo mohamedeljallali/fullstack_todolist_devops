@@ -1,28 +1,30 @@
+Container frontend_todolist_VFM  Creating
+ Container frontend_todolist_VFM  Created
 Attaching to backend_todolist_VFM, database_todolist_VFM, frontend_todolist_VFM
-database_todolist_VFM  | 2026-04-19 20:16:42+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
-database_todolist_VFM  | 2026-04-19 20:16:43+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-database_todolist_VFM  | 2026-04-19 20:16:43+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
-database_todolist_VFM  | 2026-04-19 20:16:43+00:00 [Note] [Entrypoint]: Initializing database files
-database_todolist_VFM  | 2026-04-19T20:16:43.413760Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
-database_todolist_VFM  | 2026-04-19T20:16:43.415108Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 9.6.0) initializing of server in progress as process 80
-database_todolist_VFM  | 2026-04-19T20:16:43.420272Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-database_todolist_VFM  | 2026-04-19T20:16:43.544666Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-Warning: todolist_VFM  | 2026-04-19T20:16:44.066667Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
-database_todolist_VFM  | 2026-04-19T20:16:46.163579Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
-database_todolist_VFM  | 2026-04-19 20:16:46+00:00 [Note] [Entrypoint]: Database files initialized
-database_todolist_VFM  | 2026-04-19 20:16:46+00:00 [Note] [Entrypoint]: Starting temporary server
-database_todolist_VFM  | 2026-04-19T20:16:46.205421Z 0 [System] [MY-015015] [Server] MySQL Server - start.
-database_todolist_VFM  | 2026-04-19T20:16:46.390199Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.6.0) starting as process 117
-database_todolist_VFM  | 2026-04-19T20:16:46.390209Z 0 [System] [MY-015590] [Server] MySQL Server has access to 4 logical CPUs.
-database_todolist_VFM  | 2026-04-19T20:16:46.390218Z 0 [System] [MY-015590] [Server] MySQL Server has access to 16766431232 bytes of physical memory.
-database_todolist_VFM  | 2026-04-19T20:16:46.400969Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-database_todolist_VFM  | 2026-04-19T20:16:46.519099Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-Warning: todolist_VFM  | 2026-04-19T20:16:46.740636Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
-database_todolist_VFM  | 2026-04-19T20:16:46.740678Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
-Warning: todolist_VFM  | 2026-04-19T20:16:46.742558Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
-database_todolist_VFM  | 2026-04-19T20:16:46.761090Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
-database_todolist_VFM  | 2026-04-19T20:16:46.761200Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '9.6.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
-database_todolist_VFM  | 2026-04-19 20:16:46+00:00 [Note] [Entrypoint]: Temporary server started.
+database_todolist_VFM  | 2026-04-19 20:26:53+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
+database_todolist_VFM  | 2026-04-19 20:26:53+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+database_todolist_VFM  | 2026-04-19 20:26:53+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
+database_todolist_VFM  | 2026-04-19 20:26:53+00:00 [Note] [Entrypoint]: Initializing database files
+database_todolist_VFM  | 2026-04-19T20:26:53.836769Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+database_todolist_VFM  | 2026-04-19T20:26:53.838316Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 9.6.0) initializing of server in progress as process 80
+database_todolist_VFM  | 2026-04-19T20:26:53.843896Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+database_todolist_VFM  | 2026-04-19T20:26:53.941522Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+Warning: todolist_VFM  | 2026-04-19T20:26:54.554622Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+database_todolist_VFM  | 2026-04-19T20:26:56.549766Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
+database_todolist_VFM  | 2026-04-19 20:26:56+00:00 [Note] [Entrypoint]: Database files initialized
+database_todolist_VFM  | 2026-04-19 20:26:56+00:00 [Note] [Entrypoint]: Starting temporary server
+database_todolist_VFM  | 2026-04-19T20:26:56.605945Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+database_todolist_VFM  | 2026-04-19T20:26:56.795910Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.6.0) starting as process 117
+database_todolist_VFM  | 2026-04-19T20:26:56.795929Z 0 [System] [MY-015590] [Server] MySQL Server has access to 4 logical CPUs.
+database_todolist_VFM  | 2026-04-19T20:26:56.795941Z 0 [System] [MY-015590] [Server] MySQL Server has access to 16766431232 bytes of physical memory.
+database_todolist_VFM  | 2026-04-19T20:26:56.807740Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+database_todolist_VFM  | 2026-04-19T20:26:56.913060Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+Warning: todolist_VFM  | 2026-04-19T20:26:57.130154Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+database_todolist_VFM  | 2026-04-19T20:26:57.130214Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+Warning: todolist_VFM  | 2026-04-19T20:26:57.131862Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+database_todolist_VFM  | 2026-04-19T20:26:57.150299Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+database_todolist_VFM  | 2026-04-19T20:26:57.150370Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '9.6.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+database_todolist_VFM  | 2026-04-19 20:26:57+00:00 [Note] [Entrypoint]: Temporary server started.
 database_todolist_VFM  | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
 database_todolist_VFM  | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
 database_todolist_VFM  | Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
@@ -30,12 +32,12 @@ database_todolist_VFM  | Warning: Unable to load '/usr/share/zoneinfo/leapsecond
 database_todolist_VFM  | Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
 database_todolist_VFM  | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
 database_todolist_VFM  | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
-database_todolist_VFM  | 2026-04-19 20:16:48+00:00 [Note] [Entrypoint]: Creating database ***
-database_todolist_VFM  | 2026-04-19 20:16:48+00:00 [Note] [Entrypoint]: Creating user ***
-database_todolist_VFM  | 2026-04-19 20:16:48+00:00 [Note] [Entrypoint]: Giving user *** access to schema ***
+database_todolist_VFM  | 2026-04-19 20:26:58+00:00 [Note] [Entrypoint]: Creating database ***
+database_todolist_VFM  | 2026-04-19 20:26:58+00:00 [Note] [Entrypoint]: Creating user ***
+database_todolist_VFM  | 2026-04-19 20:26:58+00:00 [Note] [Entrypoint]: Giving user *** access to schema ***
 database_todolist_VFM  | 
-database_todolist_VFM  | 2026-04-19 20:16:48+00:00 [Note] [Entrypoint]: Stopping temporary server
-database_todolist_VFM  | 2026-04-19T20:16:48.455390Z 15 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 9.6.0).
+database_todolist_VFM  | 2026-04-19 20:26:58+00:00 [Note] [Entrypoint]: Stopping temporary server
+database_todolist_VFM  | 2026-04-19T20:26:58.655158Z 15 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 9.6.0).
 backend_todolist_VFM   | Traceback (most recent call last):
 backend_todolist_VFM   |   File "/usr/local/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
 backend_todolist_VFM   |     self._cmysql.connect(**cnx_kwargs)
@@ -66,23 +68,26 @@ frontend_todolist_VFM  |
 frontend_todolist_VFM  | > client@0.0.0 dev
 frontend_todolist_VFM  | > vite --host --port 3000
 frontend_todolist_VFM  | 
-frontend_todolist_VFM  | sh: vite: not found
 backend_todolist_VFM exited with code 1
-database_todolist_VFM  | 2026-04-19T20:16:49.137328Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 9.6.0)  MySQL Community Server - GPL.
-frontend_todolist_VFM exited with code 127
-database_todolist_VFM  | 2026-04-19T20:16:49.137344Z 0 [System] [MY-015016] [Server] MySQL Server - end.
-database_todolist_VFM  | 2026-04-19 20:16:49+00:00 [Note] [Entrypoint]: Temporary server stopped
+database_todolist_VFM  | 2026-04-19T20:26:59.522994Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 9.6.0)  MySQL Community Server - GPL.
+database_todolist_VFM  | 2026-04-19T20:26:59.523013Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+database_todolist_VFM  | 2026-04-19 20:26:59+00:00 [Note] [Entrypoint]: Temporary server stopped
 database_todolist_VFM  | 
-database_todolist_VFM  | 2026-04-19 20:16:49+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+database_todolist_VFM  | 2026-04-19 20:26:59+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
 database_todolist_VFM  | 
-database_todolist_VFM  | 2026-04-19T20:16:49.475375Z 0 [System] [MY-015015] [Server] MySQL Server - start.
-database_todolist_VFM  | 2026-04-19T20:16:49.660914Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.6.0) starting as process 1
-database_todolist_VFM  | 2026-04-19T20:16:49.660930Z 0 [System] [MY-015590] [Server] MySQL Server has access to 4 logical CPUs.
-database_todolist_VFM  | 2026-04-19T20:16:49.660938Z 0 [System] [MY-015590] [Server] MySQL Server has access to 16766431232 bytes of physical memory.
-database_todolist_VFM  | 2026-04-19T20:16:49.666516Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-database_todolist_VFM  | 2026-04-19T20:16:49.792750Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-Warning: todolist_VFM  | 2026-04-19T20:16:49.988599Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
-database_todolist_VFM  | 2026-04-19T20:16:49.988632Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
-Warning: todolist_VFM  | 2026-04-19T20:16:49.990607Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
-database_todolist_VFM  | 2026-04-19T20:16:50.012166Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
-database_todolist_VFM  | 2026-04-19T20:16:50.012247Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '9.6.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+database_todolist_VFM  | 2026-04-19T20:26:59.681687Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+database_todolist_VFM  | 2026-04-19T20:26:59.865636Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.6.0) starting as process 1
+database_todolist_VFM  | 2026-04-19T20:26:59.865657Z 0 [System] [MY-015590] [Server] MySQL Server has access to 4 logical CPUs.
+database_todolist_VFM  | 2026-04-19T20:26:59.865670Z 0 [System] [MY-015590] [Server] MySQL Server has access to 16766431232 bytes of physical memory.
+database_todolist_VFM  | 2026-04-19T20:26:59.872967Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+database_todolist_VFM  | 2026-04-19T20:26:59.982403Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+frontend_todolist_VFM  | 
+frontend_todolist_VFM  |   VITE v6.3.5  ready in 686 ms
+frontend_todolist_VFM  | 
+frontend_todolist_VFM  |   ➜  Local:   http://localhost:3000/
+frontend_todolist_VFM  |   ➜  Network: http://172.18.0.4:3000/
+Warning: todolist_VFM  | 2026-04-19T20:27:00.200959Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+database_todolist_VFM  | 2026-04-19T20:27:00.201090Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+Warning: todolist_VFM  | 2026-04-19T20:27:00.204059Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+database_todolist_VFM  | 2026-04-19T20:27:00.233572Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '9.6.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+database_todolist_VFM  | 2026-04-19T20:27:00.234215Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
