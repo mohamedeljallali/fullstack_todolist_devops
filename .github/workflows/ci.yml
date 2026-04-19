@@ -55,7 +55,7 @@ jobs:
         run: docker compose build
       
       - name: start containers and test
-        run: docker compose up
+        run:  docker compose up --exit-code-from backend
 
       - name: debug containers
         if: failure()
@@ -65,4 +65,3 @@ jobs:
         run: |
           docker compose ps
           curl -f http://localhost:3000 || exit 1
-          docker compose up --exit-code-from backend
