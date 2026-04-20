@@ -10,20 +10,18 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_HOST: ${MYSQL_HOST}
-      MYSQL_PORT: ${MYSQL_PORT}
     ports:
-      - "3306:3306"
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
     volumes:
       - db_data:/var/lib/mysql
     networks:
       - todoapp-react-flask-mysql
     healthcheck:
-     test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
-     interval: 5s
-     timeout: 5s
-     retries: 10
-     start_period: 20s
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      # start_period: 20s
 
   backend:
     build: ./server
@@ -31,30 +29,26 @@ services:
     env_file:
       - .env
     environment:
-      FLASK_APP: app.py
-      FLASK_ENV: development
-      FLASK_DEBUG: "1"
       DB_HOST: ${MYSQL_HOST}
       DB_USER: ${MYSQL_USER}
       DB_PASS: ${MYSQL_PASSWORD}
       DB_NAME: ${MYSQL_DATABASE}
-      DB_PORT: ${MYSQL_PORT}
+
     ports:
-      - "5000:5000"
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
     networks:
       - todoapp-react-flask-mysql
     volumes:
       - ./server:/app
     depends_on:
        db:
-        # condition: service_started
         condition: service_healthy
-
+        
   frontend:
     build: ./client
     container_name: frontend_todolist_VFM
     ports:
-      - "3000:3000"
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     volumes:
       - ./client:/app
       - /app/node_modules

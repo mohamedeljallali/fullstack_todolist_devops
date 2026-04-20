@@ -7,20 +7,20 @@ on:
     branches: [ "main" ]
 
 jobs:
-  # analyse-projects-code:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-python@v5
-  #       with:
-  #         python-version: '3.12'
+  analyse-projects-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-  #     - name: Install dependencies and run linters
-  #       run: pip install flake8
+      - name: Install dependencies and run linters
+        run: pip install flake8
 
-  #     - run: flake8 ./server
+      - run: flake8 ./server
 
-  #     - uses: actions/setup-node@v4
+  #     - uses: actions/setup-node@v3
   #       with:
   #         node-version: '20'
   #     - run: npm install eslint
@@ -42,6 +42,8 @@ jobs:
           MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
           MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
           MYSQL_PORT: ${{ secrets.MYSQL_PORT }}
+          BACKEND_PORT: ${{ secrets.BACKEND_PORT }}
+          FRONTEND_PORT: ${{ secrets.FRONTEND_PORT }}
           API_URL: ${{ secrets.API_URL }}
         run: |
           # Create root env file for Docker Compose
@@ -51,6 +53,8 @@ jobs:
           echo "MYSQL_DATABASE=$MYSQL_DATABASE" >> .env
           echo "MYSQL_HOST=$MYSQL_HOST" >> .env
           echo "MYSQL_PORT=$MYSQL_PORT" >> .env
+          echo "BACKEND_PORT=$BACKEND_PORT" >> .env
+          echo "FRONTEND_PORT=$FRONTEND_PORT" >> .env
       
           # Create frontend config file for Vite
           echo "VITE_API_URL=$API_URL" > ./client/.env
