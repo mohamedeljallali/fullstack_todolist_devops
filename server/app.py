@@ -8,7 +8,7 @@ CORS(app)
 
 db = get_connection()
 
-def     create_table():
+def create_table():
     conn = db
     cursor = conn.cursor()
     cursor.execute("""
