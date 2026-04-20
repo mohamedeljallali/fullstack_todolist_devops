@@ -8,3 +8,6 @@ server/.venv/
 *.pyc
 backup/
 server/model.py
+
+RM.md
+scan.txt
