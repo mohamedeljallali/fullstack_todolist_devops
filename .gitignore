@@ -7,3 +7,4 @@ server/venv/
 server/.venv/
 *.pyc
 backup/
+server/model.py

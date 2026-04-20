@@ -14,7 +14,7 @@ def get_connection():
     retries = 10
     while retries > 0:
         try:
-            conn  = mysql.connector.connect(**db_config)
+            conn = mysql.connector.connect(**db_config)
             print("Connected to MySQL database")
             return conn
         except mysql.connector.Error as err:
@@ -22,4 +22,4 @@ def get_connection():
             print(f"Retrying in 5 seconds... ({retries} retries left)")
             time.sleep(5)
 
-    raise Exception("Could not connect to MySQL database after multiple attempts")
+    raise Exception(f"{err}")

@@ -3,7 +3,7 @@ from db import get_connection
 
 routes = Blueprint('routes', __name__)
 
-@routes.route('/todos', methods=['GET'])
+@routes.route('/todos', methods = ['GET'])
 def get_todos():
     conn = get_connection()
     cursor = conn.cursor(dictionary=True)
@@ -12,7 +12,7 @@ def get_todos():
     conn.close()
     return jsonify(todos)
 
-@routes.route('/todos', methods=['POST'])
+@routes.route('/todos', methods = ['POST'])
 def add_todo():
     data = request.get_json()
     title = data['title']
@@ -23,7 +23,7 @@ def add_todo():
     conn.close()
     return jsonify({"message": "Todo added"}), 201
 
-@routes.route('/todos/<int:id>', methods=['PUT'])
+@routes.route('/todos/<int:id>', methods = ['PUT'])
 def update_todo(id):
     data = request.get_json()
     completed = data['completed']
@@ -34,7 +34,7 @@ def update_todo(id):
     conn.close()
     return jsonify({"message": "Todo updated"})
 
-@routes.route('/todos/<int:id>', methods=['DELETE'])
+@routes.route('/todos/<int:id>', methods = ['DELETE'])
 def delete_todo(id):
     conn = get_connection()
     cursor = conn.cursor()
