@@ -1,3 +1,0 @@
-backend_todolist_VFM   |  * Restarting with stat
-backend_todolist_VFM   |  * Debugger is active!
-backend_todolist_VFM   |  * Debugger PIN: 106-629-793
