@@ -1,14 +1,14 @@
 import mysql.connector
-import os
+from os import getenv
 import time
 
 
 def get_connection():
     db_config = {
-        "host": os.getenv("MYSQL_HOST"),
-        "user": os.getenv("MYSQL_USER"),
-        "password": os.getenv("MYSQL_PASSWORD"),
-        "database": os.getenv("MYSQL_DATABASE"),
+        "host": getenv("MYSQL_HOST"),
+        "user": getenv("MYSQL_USER"),
+        "password": getenv("MYSQL_PASSWORD"),
+        "database": getenv("MYSQL_DATABASE"),
     }
 
     retries = 10

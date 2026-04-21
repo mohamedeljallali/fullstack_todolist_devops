@@ -7,7 +7,7 @@ server/venv/
 server/.venv/
 *.pyc
 backup/
-server/model.py
+server/models.py
 
 RM.md
 scan.txt

@@ -2,6 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from routes import routes
 from db import get_connection
+from os import getenv
 
 app = Flask(__name__)
 CORS(app)
@@ -28,4 +29,4 @@ create_table()
 app.register_blueprint(routes)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=getenv('BACKEND_PORT'), debug=True)
